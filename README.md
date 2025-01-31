@@ -1,7 +1,7 @@
 # README for Running OCT Model Training and Testing
 
 ## Overview
-This repository contains code for training and testing an Optical Coherence Tomography (OCT) deep learning model for glaucoma classification. The model incorporates various attention mechanisms and augmentation techniques, and it is designed to work with Zeiss and Topcon datasets.
+This repository contains code for training and testing AI-CNet3D: An Anatomically-Informed Cross-Attention Network for Enhanced Glaucoma Detection and Interpretability in 3D OCT Volumes. The model incorporates various attention mechanisms and visualization techniques, and it is designed to work with Zeiss and Topcon datasets.
 
 ## Requirements
 Before running the training and testing pipeline, ensure that you have the necessary dependencies installed.
@@ -86,24 +86,4 @@ The script will save logs, trained models, and validation metrics in a structure
     │   │   │   ├── results.log (Log output per trial)
     │   ├── results.log (Final aggregated results)
 ```
-
-## Notes
-- Ensure that your dataset is correctly structured and accessible from the paths defined in the configuration file.
-- Use a GPU (`device: "cuda"`) for efficient training.
-- The model supports multiple attention mechanisms (`att_type`) such as `CrossSIIS`, `EPA`, and `TimeSformer`.
-
-## Troubleshooting
-- **Issue: `ModuleNotFoundError`**
-  - Ensure all dependencies are installed (`pip install -r requirements.txt`).
-- **Issue: CUDA out of memory**
-  - Reduce `batch_size` in the configuration file or switch to `device: "cpu"`.
-- **Issue: Invalid dataset paths**
-  - Check that `glaucoma_dir` and `non_glaucoma_dir` point to the correct dataset locations.
-
-## Contact
-For any questions or issues, reach out to Roshan or the AI4VS Lab at Columbia University.
-
----
-
-This guide provides a complete workflow for executing the training and testing of the OCT model with different configurations.
 
