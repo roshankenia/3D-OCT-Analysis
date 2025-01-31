@@ -1,0 +1,27 @@
+dataset:
+  data_size:
+  - 128
+  - 192
+  - 112
+  data_weight: same
+  glaucoma_dir: ../../CenteredData/3D_Data/Numpy_Topcon_3D_Volumes/Glaucomas
+  non_glaucoma_dir: ../../CenteredData/3D_Data/Numpy_Topcon_3D_Volumes/Non-Glaucomas
+  provider: TopconSSL
+  seeds:
+  - 100
+  - 200
+  - 300
+experiment:
+  batch_size: 4
+  device: cuda:1
+  info: MultiSplitCrossSIIS
+  learning_rate: 0.0001
+  loss: BCELoss
+  name: medium_ratio_sup_inf_flips_kernel
+  num_epochs: 250
+  patience: 25
+model:
+  att_type: MultiSplitCrossSIIS
+  attention: true
+  aug_type: fgzs
+  augmentation: true

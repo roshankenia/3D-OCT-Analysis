@@ -1,0 +1,68 @@
+dataset:
+  data_size:
+  - 128
+  - 192
+  - 112
+  data_weight: same
+  glaucoma_dir: ../../CenteredData/3D_Data/Numpy_Topcon_3D_Volumes/Glaucomas
+  non_glaucoma_dir: ../../CenteredData/3D_Data/Numpy_Topcon_3D_Volumes/Non-Glaucomas
+  provider: TopconSSL
+  seeds:
+  - 100
+  - 200
+  - 300
+experiment:
+  batch_size: 4
+  device: cuda:0
+  info: no_ssl_base_AttMeanCNN_ultracropped_raw_CNN
+  learning_rate: 0.0001
+  loss: BCELoss
+  name: viz
+  num_epochs: 250
+  patience: 25
+  ssl_loss_name: MSE
+  ssl_weight: 0.05
+  use_ssl: false
+model:
+  attention: true
+  aug_type: fgzs
+  augmentation: true
+  model_params:
+    SCAR_layer_num: 4
+    att_ind: []
+    # - 2
+    # - 4
+    att_type: None
+    conv_in_channels:
+    - 1
+    - 32
+    - 32
+    - 32
+    - 32
+    conv_kernel_size:
+    - 7
+    - 5
+    - 3
+    - 3
+    - 3
+    conv_out_channels:
+    - 32
+    - 32
+    - 32
+    - 32
+    - 32
+    conv_padding:
+    - 3
+    - same
+    - same
+    - same
+    - same
+    conv_stride:
+    - 2
+    - 1
+    - 1
+    - 1
+    - 1
+    gradcam_layer_num: 5
+    max_pool_ind: [2, 4]
+    num_conv_layers: 5

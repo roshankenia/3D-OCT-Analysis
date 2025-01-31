@@ -1,0 +1,45 @@
+dataset:
+  type: dict
+  required: True
+  schema:
+    provider:
+      type: string
+      required: True
+    glaucoma_dir:
+      type: string
+      required: True
+    non_glaucoma_dir:
+      type: string
+      required: True
+    data_size:
+      type: list
+      required: True
+    data_weight:
+      type: string
+      required: True
+model:
+  type: dict
+  required: True
+  schema:
+    attention:
+      type: boolean
+      required: True
+    augmentation:
+      type: boolean
+      required: True
+experiment:
+  type: dict
+  required: True
+  schema:
+    loss:
+      type: string
+      required: True
+    num_epochs:
+      type: integer
+      required: True
+    batch_size:
+      type: integer
+      required: True
+    learning_rate:
+      type: float
+      required: True
